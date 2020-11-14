@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="{% url 'my_app:new_search' %}" method="POST">
+    {% csrf_token %}
+    <input type = "text" name = "search" placeholder="search for something">
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+</form>
+{% endblock %}
