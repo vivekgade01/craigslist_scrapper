@@ -5,13 +5,13 @@
         <title>my craigslist</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
     </head>
     <body>
-        <nav>
+        <nav style="background-color: #800080">
             <div class="container nav-wrapper">
                 <a href="/" class="brand-logo">My Craigslist</a>
                 <ul id="nav-mobile" class="right">
@@ -25,7 +25,7 @@
                 <div class="col s4">
                     <!-- Promo Content 1 goes here -->
                     <div class="center">
-                        <i class="large material-icons" style="color: #EE6E73">flash_on</i>
+                        <i class="large material-icons" style="color: orange">flash_on</i>
                         <p>Fast craigslist web scraper</p>
                         <p class="light center">Scrape away right here with a beautiful GUI.</p>
                     </div>
@@ -34,7 +34,7 @@
                 <div class="col s4">
                     <!-- Promo Content 2 goes here -->
                     <div class="center">
-                        <i class="large material-icons" style="color: orange">camera</i>
+                        <i class="large material-icons" style="color: rgb(231, 33, 49)">camera</i>
                         <p>Filter your searches</p>
                         <p class="light center">We built in functionality to filter based on pricing.</p>
                     </div>
@@ -43,7 +43,7 @@
                 <div class="col s4">
                     <!-- Promo Content 3 goes here -->
                     <div class="center">
-                        <i class="large material-icons" style="color: blue">chrome_reader_mode</i>
+                        <i class="large material-icons" style="color: #6507fcc4">chrome_reader_mode</i>
                         <p>A much better front-end than Craigslist</p>
                         <p class="light center">Built with ❤️</p>
                     </div>
@@ -52,7 +52,7 @@
             <form action="{% url 'my_app:new_search' %}" method="POST">
                 {% csrf_token %}
                 <input type = "text" name = "search" placeholder="search for something">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <button class="btn waves-effect waves-light" type="submit" name="action" style="background-color: #800080">Submit
                     <i class="material-icons right">send</i>
                   </button>
             </form>

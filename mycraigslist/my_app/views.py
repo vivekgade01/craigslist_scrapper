@@ -9,7 +9,7 @@ from requests.compat import quote_plus
 
 # Create your views here.
 
-BASE_CRAIGSLIST_URL = 'https://lasvegas.craigslist.org/search/?query={}'
+BASE_CRAIGSLIST_URL = 'https://losangeles.craigslist.org/search/?query={}'
 BASE_IMAGE_URL = 'https://images.craigslist.org/{}_300x300.jpg'
 
 def home(request):
@@ -17,7 +17,7 @@ def home(request):
 
 def new_search(request):
     search = request.POST.get('search')#the search in .get('search') is from the form input name
-    #models.Search.objects.create(search = search)
+    models.Search.objects.create(search = search)
     final_url = BASE_CRAIGSLIST_URL.format(quote_plus(search))
     #print(final_url)
     response = requests.get(final_url)
